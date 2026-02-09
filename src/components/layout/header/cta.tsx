@@ -1,14 +1,17 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRightIcon } from '@/components/icons/pixel';
-import { MISTRAL_URL } from '@/lib/constants';
 
-export const HeaderCta = (props: React.ComponentProps<typeof Button>) => {
+interface HeaderCtaProps extends React.ComponentProps<typeof Button> {
+  href: string;
+  target?: string;
+  children?: React.ReactNode;
+}
+
+export const HeaderCta = ({ href, children, target, ...props }: HeaderCtaProps) => {
   return (
     <Button asChild {...props}>
-      <Link href={`${MISTRAL_URL}/contact `}>
-        Reach out
-        <ArrowRightIcon className="size-5" />
+      <Link href={href} target={target}>
+        {children}
       </Link>
     </Button>
   );

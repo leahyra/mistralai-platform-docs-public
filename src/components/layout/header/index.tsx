@@ -11,6 +11,7 @@ import { MobileMenu, MobileMenuButton } from './menu';
 import { HeaderCta } from './cta';
 import { BrandProductDropdown } from './brand-dropdown';
 import MistralLogoSolid from '@/components/icons/assets/mistral-logo-solid';
+import { ArrowRightIcon } from '@/components/icons/pixel';
 
 export default function Header() {
   return (
@@ -39,9 +40,10 @@ export default function Header() {
         {/* Desktop Header Content */}
         <div className="hidden flex-1 px-2 lg:flex items-center justify-between">
           <DesktopHeaderLinks />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-end gap-3">
             <ThemeToggle />
-            <HeaderCta className="pointer-events-auto" />
+            <HeaderCta href="https://mistral.ai/contact?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" target='_blank' variant="secondary" className="pointer-events-auto">Reach out</HeaderCta>
+            <HeaderCta href="https://console.mistral.ai?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" target='_blank' className="pointer-events-auto">Try Studio <ArrowRightIcon className="size-5" /></HeaderCta>
           </div>
         </div>
       </header>
