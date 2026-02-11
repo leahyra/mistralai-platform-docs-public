@@ -12,6 +12,7 @@ import { HeaderCta } from './cta';
 import { BrandProductDropdown } from './brand-dropdown';
 import MistralLogoSolid from '@/components/icons/assets/mistral-logo-solid';
 import { ArrowRightIcon } from '@/components/icons/pixel';
+import { DynamicStudioCta } from './dynamic-studio-cta';
 
 export default function Header() {
   return (
@@ -43,7 +44,7 @@ export default function Header() {
           <div className="flex items-center justify-end gap-3">
             <ThemeToggle />
             <HeaderCta href="https://mistral.ai/contact?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" target='_blank' variant="secondary" className="pointer-events-auto">Reach out</HeaderCta>
-            <HeaderCta href="https://console.mistral.ai?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" target='_blank' className="pointer-events-auto">Try Studio <ArrowRightIcon className="size-5" /></HeaderCta>
+            <DynamicStudioCta className='pointer-events-auto' />
           </div>
         </div>
       </header>

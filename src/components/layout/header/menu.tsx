@@ -4,6 +4,7 @@ import { MobileHeaderLinks } from './header-links';
 import { HeaderCta } from './cta';
 import { ThemeToggle } from './theme-toggle';
 import { Suspense } from 'react';
+import { DynamicStudioCta } from './dynamic-studio-cta';
 
 export const MobileMenu = () => {
   return (
@@ -13,7 +14,7 @@ export const MobileMenu = () => {
           <MobileHeaderLinks />
         </Suspense>
         <HeaderCta href="https://mistral.ai/contact?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" size="lg" variant="secondary" target='_blank'>Reach out</HeaderCta>
-        <HeaderCta href="https://console.mistral.ai?utm_source=docs&utm_medium=header_cta&utm_campaign=studio_trial" size="lg" target='_blank'>Try Studio</HeaderCta>
+        <DynamicStudioCta size="lg" className='w-full' />
       </div>
       <div className="flex border-t mt-4 dark:bg-black/20 bg-black/5 border-border/50 py-6 justify-between items-center p-sides">
         <p>Theme</p>
