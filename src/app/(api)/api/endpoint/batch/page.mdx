@@ -636,6 +636,25 @@ _Default Value:_ `"batch"`
 
 <ExpandableProperty
   slot="entry"
+  id="data_BatchJobOut_outputs"
+  headingId="operation-jobs_api_routes_batch_get_batch_jobs_responses_200_application-json_data_batchjobout_outputs"
+  parentId="data_BatchJobOut"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"any","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### outputs \{#operation-jobs_api_routes_batch_get_batch_jobs_responses_200_application-json_data_batchjobout_outputs\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
   id="data_BatchJobOut_started_at"
   headingId="operation-jobs_api_routes_batch_get_batch_jobs_responses_200_application-json_data_batchjobout_started_at"
   parentId="data_BatchJobOut"
@@ -900,10 +919,7 @@ curl https://api.mistral.ai/v1/batch/jobs \
  -H 'Authorization: Bearer YOUR_APIKEY_HERE' \
  -H 'Content-Type: application/json' \
  -d '{
-  "endpoint": "/v1/chat/completions",
-  "input_files": [
-    "ipsum eiusmod"
-  ]
+  "endpoint": "/v1/chat/completions"
 }'
 ```
 
@@ -929,10 +945,7 @@ curl https://api.mistral.ai/v1/batch/jobs \
 
 ```json
 {
-  "endpoint": "/v1/chat/completions",
-  "input_files": [
-    "ipsum eiusmod"
-  ]
+  "endpoint": "/v1/chat/completions"
 }
 ```
 
@@ -1002,8 +1015,8 @@ In case you want to use a specific agent from the **deprecated** agents api for 
   slot="entry"
   id="input_files"
   headingId="operation-jobs_api_routes_batch_create_batch_job_request_input_files"
-  typeInfo={{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
-  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"string","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
   hasExpandableContent={true}
   expandByDefault={false}
 >
@@ -1081,6 +1094,87 @@ mistral-medium-latest
 ```
 
 </ExpandablePropertyExamples>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="requests"
+  headingId="operation-jobs_api_routes_batch_create_batch_job_request_requests"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest\">BatchRequest</a>","children":[{"label":"BatchRequest","linkedLabel":"<a href=\"#operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest\">BatchRequest</a>","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### requests \{#operation-jobs_api_routes_batch_create_batch_job_request_requests\}
+
+</ExpandablePropertyTitle>
+
+<ExpandablePropertyBreakouts slot="breakouts">
+
+<ExpandableBreakout
+  slot="entry"
+  id="requests_BatchRequest"
+  headingId="operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest"
+  parentId="requests"
+  hasExpandableContent={true}
+  expandByDefault={false}
+>
+
+<ExpandableBreakoutTitle slot="title">
+
+#### BatchRequest \{#operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest\}
+
+</ExpandableBreakoutTitle>
+
+<ExpandableBreakoutProperties slot="properties">
+
+<ExpandableProperty
+  slot="entry"
+  id="requests_BatchRequest_body"
+  headingId="operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest_body"
+  parentId="requests_BatchRequest"
+  typeInfo={{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"required","variant":"warning"}]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### body \{#operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest_body\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="requests_BatchRequest_custom_id"
+  headingId="operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest_custom_id"
+  parentId="requests_BatchRequest"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"string","linkedLabel":"string","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### custom_id \{#operation-jobs_api_routes_batch_create_batch_job_request_requests_batchrequest_custom_id\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+</ExpandableBreakoutProperties>
+
+</ExpandableBreakout>
+
+</ExpandablePropertyBreakouts>
 
 </ExpandableProperty>
 
@@ -1536,6 +1630,24 @@ _Default Value:_ `"batch"`
 
 <ExpandableProperty
   slot="entry"
+  id="outputs"
+  headingId="operation-jobs_api_routes_batch_create_batch_job_responses_200_application-json_outputs"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"any","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### outputs \{#operation-jobs_api_routes_batch_create_batch_job_responses_200_application-json_outputs\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
   id="started_at"
   headingId="operation-jobs_api_routes_batch_create_batch_job_responses_200_application-json_started_at"
   typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"integer","linkedLabel":"integer","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
@@ -1633,6 +1745,9 @@ _Get Batch Job_
 <OperationDescriptionSection slot="description">
 
 Get a batch job details by its UUID.
+
+Args:
+    inline: If True, return results inline in the response.
 
 </OperationDescriptionSection>
 
@@ -1776,6 +1891,24 @@ curl https://api.mistral.ai/v1/batch/jobs/{job_id} \
 <ExpandablePropertyTitle slot="title">
 
 ##### job_id \{#operation-jobs_api_routes_batch_get_batch_job_parameters_job_id\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="inline"
+  headingId="operation-jobs_api_routes_batch_get_batch_job_parameters_inline"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"boolean","linkedLabel":"boolean","children":[],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[{"title":"query","variant":"info"}]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### inline \{#operation-jobs_api_routes_batch_get_batch_job_parameters_inline\}
 
 </ExpandablePropertyTitle>
 
@@ -2196,6 +2329,24 @@ _Default Value:_ `"batch"`
 <ExpandablePropertyTitle slot="title">
 
 ##### output_file \{#operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_output_file\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="outputs"
+  headingId="operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_outputs"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"any","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### outputs \{#operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_outputs\}
 
 </ExpandablePropertyTitle>
 
@@ -2864,6 +3015,24 @@ _Default Value:_ `"batch"`
 <ExpandablePropertyTitle slot="title">
 
 ##### output_file \{#operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_output_file\}
+
+</ExpandablePropertyTitle>
+
+</ExpandableProperty>
+
+<ExpandableProperty
+  slot="entry"
+  id="outputs"
+  headingId="operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_outputs"
+  typeInfo={{"label":"union","linkedLabel":"union","children":[{"label":"array","linkedLabel":"any","children":[{"label":"map","linkedLabel":"any","children":[{"label":"any","linkedLabel":"any","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}],"breakoutSubTypes":{}},{"label":"null","linkedLabel":"null","children":[],"breakoutSubTypes":{}}],"breakoutSubTypes":{}}}
+  typeAnnotations={[]}
+  hasExpandableContent={false}
+  expandByDefault={false}
+>
+
+<ExpandablePropertyTitle slot="title">
+
+##### outputs \{#operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_outputs\}
 
 </ExpandablePropertyTitle>
 
