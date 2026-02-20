@@ -12,7 +12,23 @@ export default {
   legalButton: 'https://legal.mistral.ai/ai-governance/models/voxtral-small',
   status: 'Active',
   avatar: { icon: 'voxtral', backgroundColor: 'pink' },
-  weights: [],
+  weights: [
+    {
+      name: 'Weights',
+      license: 'Apache 2.0',
+      licenseUrl: 'https://www.apache.org/licenses/LICENSE-2.0.txt',
+      url: 'https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-2602',
+      parameters: '4',
+      minGpuRam: {
+        bf16: '14',
+        fp8: null,
+        fp4: null,
+        fp4_16: null,
+      },
+      active: '4',
+      contextSize: '--',
+    }
+  ],
   bloglink: 'https://mistral.ai/news/voxtral-transcribe-2',
   paperlink: null,
   contextLength: '--',

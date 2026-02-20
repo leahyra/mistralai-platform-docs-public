@@ -408,6 +408,10 @@
                   "name": "input"
                 },
                 {
+                  "elementId": "operation-embeddings_v1_embeddings_post_request_metadata",
+                  "name": "metadata"
+                },
+                {
                   "elementId": "operation-embeddings_v1_embeddings_post_request_model",
                   "name": "model"
                 },
@@ -477,6 +481,10 @@
                 {
                   "elementId": "operation-moderations_v1_moderations_post_request_input",
                   "name": "input"
+                },
+                {
+                  "elementId": "operation-moderations_v1_moderations_post_request_metadata",
+                  "name": "metadata"
                 },
                 {
                   "elementId": "operation-moderations_v1_moderations_post_request_model",
@@ -565,6 +573,10 @@
                 {
                   "elementId": "operation-classifications_v1_classifications_post_request_input",
                   "name": "input"
+                },
+                {
+                  "elementId": "operation-classifications_v1_classifications_post_request_metadata",
+                  "name": "metadata"
                 },
                 {
                   "elementId": "operation-classifications_v1_classifications_post_request_model",
@@ -1432,6 +1444,10 @@
                   "name": "model"
                 },
                 {
+                  "elementId": "operation-jobs_api_routes_batch_create_batch_job_request_requests",
+                  "name": "requests"
+                },
+                {
                   "elementId": "operation-jobs_api_routes_batch_create_batch_job_request_timeout_hours",
                   "name": "timeout_hours"
                 }
@@ -1498,6 +1514,10 @@
                     "name": "output_file"
                   },
                   {
+                    "elementId": "operation-jobs_api_routes_batch_create_batch_job_responses_200_application-json_outputs",
+                    "name": "outputs"
+                  },
+                  {
                     "elementId": "operation-jobs_api_routes_batch_create_batch_job_responses_200_application-json_started_at",
                     "name": "started_at"
                   },
@@ -1523,13 +1543,17 @@
             "path": "/v1/batch/jobs/{job_id}",
             "operationId": "jobs_api_routes_batch_get_batch_job",
             "summary": "Get Batch Job",
-            "description": "Get a batch job details by its UUID.",
+            "description": "Get a batch job details by its UUID.\n\nArgs:\n    inline: If True, return results inline in the response.",
             "parameters": {
               "elementId": "operation-jobs_api_routes_batch_get_batch_job_parameters",
               "properties": [
                 {
                   "elementId": "operation-jobs_api_routes_batch_get_batch_job_parameters_job_id",
                   "name": "job_id"
+                },
+                {
+                  "elementId": "operation-jobs_api_routes_batch_get_batch_job_parameters_inline",
+                  "name": "inline"
                 }
               ]
             },
@@ -1592,6 +1616,10 @@
                   {
                     "elementId": "operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_output_file",
                     "name": "output_file"
+                  },
+                  {
+                    "elementId": "operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_outputs",
+                    "name": "outputs"
                   },
                   {
                     "elementId": "operation-jobs_api_routes_batch_get_batch_job_responses_200_application-json_started_at",
@@ -1688,6 +1716,10 @@
                   {
                     "elementId": "operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_output_file",
                     "name": "output_file"
+                  },
+                  {
+                    "elementId": "operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_outputs",
+                    "name": "outputs"
                   },
                   {
                     "elementId": "operation-jobs_api_routes_batch_cancel_batch_job_responses_200_application-json_started_at",
@@ -1838,6 +1870,14 @@
               "elementId": "operation-audio_api_v1_transcriptions_post_request",
               "properties": [
                 {
+                  "elementId": "operation-audio_api_v1_transcriptions_post_request_context_bias",
+                  "name": "context_bias"
+                },
+                {
+                  "elementId": "operation-audio_api_v1_transcriptions_post_request_diarize",
+                  "name": "diarize"
+                },
+                {
                   "elementId": "operation-audio_api_v1_transcriptions_post_request_file",
                   "name": "file"
                 },
@@ -1913,6 +1953,14 @@
             "requestBody": {
               "elementId": "operation-audio_api_v1_transcriptions_post_stream_request",
               "properties": [
+                {
+                  "elementId": "operation-audio_api_v1_transcriptions_post_stream_request_context_bias",
+                  "name": "context_bias"
+                },
+                {
+                  "elementId": "operation-audio_api_v1_transcriptions_post_stream_request_diarize",
+                  "name": "diarize"
+                },
                 {
                   "elementId": "operation-audio_api_v1_transcriptions_post_stream_request_file",
                   "name": "file"
@@ -2115,7 +2163,7 @@
             "path": "/v1/agents/{agent_id}",
             "operationId": "agents_api_v1_agents_get",
             "summary": "Retrieve an agent entity.",
-            "description": "Given an agent retrieve an agent entity with its attributes.",
+            "description": "Given an agent, retrieve an agent entity with its attributes. The agent_version parameter can be an integer version number or a string alias.",
             "parameters": {
               "elementId": "operation-agents_api_v1_agents_get_parameters",
               "properties": [
@@ -2438,6 +2486,210 @@
                   {
                     "elementId": "operation-agents_api_v1_agents_update_version_responses_200_application-json_versions",
                     "name": "versions"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "elementId": "operation-agents_api_v1_agents_list_versions",
+            "method": "get",
+            "path": "/v1/agents/{agent_id}/versions",
+            "operationId": "agents_api_v1_agents_list_versions",
+            "summary": "List all versions of an agent.",
+            "description": "Retrieve all versions for a specific agent with full agent context. Supports pagination.",
+            "parameters": {
+              "elementId": "operation-agents_api_v1_agents_list_versions_parameters",
+              "properties": [
+                {
+                  "elementId": "operation-agents_api_v1_agents_list_versions_parameters_agent_id",
+                  "name": "agent_id"
+                },
+                {
+                  "elementId": "operation-agents_api_v1_agents_list_versions_parameters_page",
+                  "name": "page"
+                },
+                {
+                  "elementId": "operation-agents_api_v1_agents_list_versions_parameters_page_size",
+                  "name": "page_size"
+                }
+              ]
+            },
+            "responses": {
+              "200-application/json": {
+                "elementId": "operation-agents_api_v1_agents_list_versions_responses_200_application-json",
+                "properties": [
+                  {
+                    "elementId": "operation-agents_api_v1_agents_list_versions_responses_200_application-json_agent",
+                    "name": "Agent"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "elementId": "operation-agents_api_v1_agents_get_version",
+            "method": "get",
+            "path": "/v1/agents/{agent_id}/versions/{version}",
+            "operationId": "agents_api_v1_agents_get_version",
+            "summary": "Retrieve a specific version of an agent.",
+            "description": "Get a specific agent version by version number.",
+            "parameters": {
+              "elementId": "operation-agents_api_v1_agents_get_version_parameters",
+              "properties": [
+                {
+                  "elementId": "operation-agents_api_v1_agents_get_version_parameters_agent_id",
+                  "name": "agent_id"
+                },
+                {
+                  "elementId": "operation-agents_api_v1_agents_get_version_parameters_version",
+                  "name": "version"
+                }
+              ]
+            },
+            "responses": {
+              "200-application/json": {
+                "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json",
+                "properties": [
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_completion_args",
+                    "name": "completion_args"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_created_at",
+                    "name": "created_at"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_deployment_chat",
+                    "name": "deployment_chat"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_description",
+                    "name": "description"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_handoffs",
+                    "name": "handoffs"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_id",
+                    "name": "id"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_instructions",
+                    "name": "instructions"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_metadata",
+                    "name": "metadata"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_model",
+                    "name": "model"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_name",
+                    "name": "name"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_object",
+                    "name": "object"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_source",
+                    "name": "source"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_tools",
+                    "name": "tools"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_updated_at",
+                    "name": "updated_at"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_version",
+                    "name": "version"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_get_version_responses_200_application-json_versions",
+                    "name": "versions"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "elementId": "operation-agents_api_v1_agents_list_version_aliases",
+            "method": "get",
+            "path": "/v1/agents/{agent_id}/aliases",
+            "operationId": "agents_api_v1_agents_list_version_aliases",
+            "summary": "List all aliases for an agent.",
+            "description": "Retrieve all version aliases for a specific agent.",
+            "parameters": {
+              "elementId": "operation-agents_api_v1_agents_list_version_aliases_parameters",
+              "properties": [
+                {
+                  "elementId": "operation-agents_api_v1_agents_list_version_aliases_parameters_agent_id",
+                  "name": "agent_id"
+                }
+              ]
+            },
+            "responses": {
+              "200-application/json": {
+                "elementId": "operation-agents_api_v1_agents_list_version_aliases_responses_200_application-json",
+                "properties": [
+                  {
+                    "elementId": "operation-agents_api_v1_agents_list_version_aliases_responses_200_application-json_agentaliasresponse",
+                    "name": "AgentAliasResponse"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "elementId": "operation-agents_api_v1_agents_create_or_update_alias",
+            "method": "put",
+            "path": "/v1/agents/{agent_id}/aliases",
+            "operationId": "agents_api_v1_agents_create_or_update_alias",
+            "summary": "Create or update an agent version alias.",
+            "description": "Create a new alias or update an existing alias to point to a specific version. Aliases are unique per agent and can be reassigned to different versions.",
+            "parameters": {
+              "elementId": "operation-agents_api_v1_agents_create_or_update_alias_parameters",
+              "properties": [
+                {
+                  "elementId": "operation-agents_api_v1_agents_create_or_update_alias_parameters_agent_id",
+                  "name": "agent_id"
+                },
+                {
+                  "elementId": "operation-agents_api_v1_agents_create_or_update_alias_parameters_alias",
+                  "name": "alias"
+                },
+                {
+                  "elementId": "operation-agents_api_v1_agents_create_or_update_alias_parameters_version",
+                  "name": "version"
+                }
+              ]
+            },
+            "responses": {
+              "200-application/json": {
+                "elementId": "operation-agents_api_v1_agents_create_or_update_alias_responses_200_application-json",
+                "properties": [
+                  {
+                    "elementId": "operation-agents_api_v1_agents_create_or_update_alias_responses_200_application-json_alias",
+                    "name": "alias"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_create_or_update_alias_responses_200_application-json_created_at",
+                    "name": "created_at"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_create_or_update_alias_responses_200_application-json_updated_at",
+                    "name": "updated_at"
+                  },
+                  {
+                    "elementId": "operation-agents_api_v1_agents_create_or_update_alias_responses_200_application-json_version",
+                    "name": "version"
                   }
                 ]
               }

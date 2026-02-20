@@ -12,6 +12,14 @@ const CTA_BY_PATH: Record<string, { href: string; label: string }> = {
     href: "https://console.mistral.ai/build/audio/speech-to-text",
     label: "Try our Audio API",
   },
+  "/capabilities/audio_transcription/basic_transcription": {
+    href: "https://console.mistral.ai/build/audio/speech-to-text",
+    label: "Try our Audio API",
+  },
+  "/capabilities/audio_transcription/realtime_transcription": {
+    href: "https://console.mistral.ai/build/audio/realtime",
+    label: "Try our Realtime Audio API",
+  },
   "/capabilities/finetuning": {
     href: "https://console.mistral.ai/build/finetuned-models",
     label: "Try our Fine-tuning",
